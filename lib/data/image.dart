@@ -1,7 +1,6 @@
-
 import 'package:movie_app/data/href.dart';
 
-class Image{
+class Image {
   String? medium = "";
   String? original = "";
 
@@ -10,12 +9,11 @@ class Image{
     this.original,
   });
 
-  factory Image.fromJson(Map<String, dynamic> json) =>Image(
-      medium: json["medium"]??"",
-      original: json["original"]??""
-  );
-  Map<String, dynamic> toJson() =>{
-    "medium": medium,
-    "original": original,
-  };
+  factory Image.fromJson(Map<String, dynamic> json) =>
+      Image(medium: json["medium"] ?? "", original: json["original"] ?? "");
+
+  Map<String, dynamic> toJson() => {
+        "medium": medium,
+        "original": original,
+      };
 }

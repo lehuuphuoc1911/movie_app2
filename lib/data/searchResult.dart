@@ -1,4 +1,3 @@
-
 import 'package:movie_app/data/fullData.dart';
 
 class SearchResult {
@@ -7,9 +6,8 @@ class SearchResult {
 
   SearchResult({this.score, this.show});
 
-  factory SearchResult.fromJson(Map<String, dynamic> json) =>SearchResult(
-      score: json["score"],
-      show: FullData.fromJson(json["show"]) ,
-  );
-
+  factory SearchResult.fromJson(Map<String, dynamic> json) => SearchResult(
+        score: json["score"],
+        show: FullData.fromJson(json["show"]),
+      );
 }

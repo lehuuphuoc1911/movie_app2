@@ -59,15 +59,15 @@ class MovieSearchPage extends StatelessWidget {
                 if (state is SearchLoading) {
                   return const CircularProgressIndicator();
                 } else if (state is NoSearch) {
-                  return const Text("Enter the movie name the press search button");
+                  return const Text(
+                      "Enter the movie name the press search button");
                 } else if (state is SearchSuccess) {
                   //return Text(state.fullData.url.toString());
                   return resultBlocks(context, state.results);
-                } else if (state is SearchFail){
+                } else if (state is SearchFail) {
                   return Text(state.comment.toString());
                 }
                 return const Text("what happen ?");
-
               },
             ),
           ],
@@ -81,10 +81,8 @@ class MovieSearchPage extends StatelessWidget {
     //listMovie = results.map((r) => movieBlock(context, r)).toList();
 
     return Padding(
-
       padding: const EdgeInsets.only(top: 5),
       child: ListView.separated(
-
           physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
@@ -96,13 +94,15 @@ class MovieSearchPage extends StatelessWidget {
             return Row(
               children: [
                 InkWell(
-                  onTap: (){Navigator.push(
+                  onTap: () {
+                    Navigator.push(
                       context,
-                    MaterialPageRoute(
-                      builder: (context) => InfoPage(fullData: results[index].show!),
-                    ),
-                  );},
-                  
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            InfoPage(fullData: results[index].show!),
+                      ),
+                    );
+                  },
                   child: Image(
                     image: MyUtil.imageProvider(
                         results[index].show?.image?.medium.toString() ?? ""),
@@ -111,7 +111,6 @@ class MovieSearchPage extends StatelessWidget {
                   ),
                 ),
                 Text(results[index].show?.name?.toString() ?? "N/A")
-
               ],
             );
           }),

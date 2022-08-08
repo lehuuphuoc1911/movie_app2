@@ -1,5 +1,3 @@
-
-
 import 'externals.dart';
 import 'image.dart';
 import 'link.dart';
@@ -7,7 +5,7 @@ import 'network.dart';
 import 'rating.dart';
 import 'schedule.dart';
 
-class FullData{
+class FullData {
   int? id;
   String? url;
   String? name;
@@ -59,28 +57,33 @@ class FullData{
   });
 
   factory FullData.fromJson(Map<String, dynamic> json) => FullData(
-    id: json["id"],
-    url: json["url"],
-    name: json["name"],
-    type: json["type"],
-    language: json["language"],
-    genres:json["genres"]!= null ? (json["genres"]).cast<String>(): null,
-    status: json["status"],
-    runtime: json["runtime"],
-    averageRuntime: json["averageRuntime"],
-    premiered: json["premiered"],
-    ended: json["ended"],
-    officialSite: json["officialSite"],
-    schedule:json["schedule"]!=null? Schedule.fromJson(json["schedule"]):null,
-    rating:json["rating"]!= null? Rating.fromJson(json["rating"]):null,
-    weight: json["weight"],
-    network:json["network"]!= null ? Network.fromJson(json["network"]):null,
-    webChannel: json["weChannel"],
-    dvdCountry: json["dvdCountry"],
-    externals:json["externals"]!= null? Externals.fromJson(json["externals"]):null,
-    image:json["image"]!= null? Image.fromJson(json["image"]):null ,
-    summary: json["summary"],
-    updated: json["updated"],
-    link: json["_links"]!= null ? Link.fromJson(json["_links"]):null,
-  );
+        id: json["id"],
+        url: json["url"],
+        name: json["name"],
+        type: json["type"],
+        language: json["language"],
+        genres: json["genres"] != null ? (json["genres"]).cast<String>() : null,
+        status: json["status"],
+        runtime: json["runtime"],
+        averageRuntime: json["averageRuntime"],
+        premiered: json["premiered"],
+        ended: json["ended"],
+        officialSite: json["officialSite"],
+        schedule: json["schedule"] != null
+            ? Schedule.fromJson(json["schedule"])
+            : null,
+        rating: json["rating"] != null ? Rating.fromJson(json["rating"]) : null,
+        weight: json["weight"],
+        network:
+            json["network"] != null ? Network.fromJson(json["network"]) : null,
+        webChannel: json["weChannel"],
+        dvdCountry: json["dvdCountry"],
+        externals: json["externals"] != null
+            ? Externals.fromJson(json["externals"])
+            : null,
+        image: json["image"] != null ? Image.fromJson(json["image"]) : null,
+        summary: json["summary"],
+        updated: json["updated"],
+        link: json["_links"] != null ? Link.fromJson(json["_links"]) : null,
+      );
 }

@@ -19,7 +19,7 @@ class InfoPage extends StatelessWidget {
       body: SingleChildScrollView(
         //physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
-        
+
         child: Column(
           children: [
             const Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 5)),
@@ -106,7 +106,8 @@ class InfoPage extends StatelessWidget {
                         ),
                         Text(
                             "${fullData.schedule?.days?.join("s, ") ?? "N/A"}s at ${fullData.schedule?.time}"),
-                        Text(" (Runtime: ${fullData.runtime?.toString() ?? "N/A"} mins)"),
+                        Text(
+                            " (Runtime: ${fullData.runtime?.toString() ?? "N/A"} mins)"),
                       ],
                     ),
                     Row(
@@ -129,7 +130,6 @@ class InfoPage extends StatelessWidget {
                 ),
               ),
             )
-
           ],
         ),
       ),
